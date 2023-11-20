@@ -17,6 +17,7 @@ function UserGuessForm({ updateGuessList, isGameOver }) {
         <label htmlFor="guess-input">Enter guess:</label>
         <input
           id="guess-input"
+          required
           type="text"
           value={guess}
           onChange={(e) => setGuess(e.target.value)}
