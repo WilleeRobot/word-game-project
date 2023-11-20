@@ -6,7 +6,7 @@ function UserGuessForm({ updateGuessList, isGameOver }) {
   function handleSubmit(e) {
     e.preventDefault();
     const userInput = guess.toUpperCase().trim().split(" ").join("");
-    console.log("USER_FORM_INPUT: ", userInput);
+
     updateGuessList(userInput);
     setGuess("");
   }

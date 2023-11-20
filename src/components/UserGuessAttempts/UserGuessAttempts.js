@@ -3,7 +3,6 @@ import React from "react";
 import Guess from "../Guess";
 
 function UserGuessAttempts({ renderGrid }) {
-  console.log("GRID_TO_RENDER: ", renderGrid);
   return (
     <div className="guess-results">
       {renderGrid.map((guess) => (

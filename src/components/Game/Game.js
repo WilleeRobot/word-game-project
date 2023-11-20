@@ -9,8 +9,8 @@ import { checkGuess } from "../../game-helpers.js";
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
-// To make debugging easier, we'll log the solution in the console.
-console.info({ answer });
+// // To make debugging easier, we'll log the solution in the console.
+// console.info({ answer });
 
 function Game() {
   let renderGrid = [];
@@ -24,8 +24,6 @@ function Game() {
   const [isCorrectWord, setIsCorrectWord] = useState(false);
 
   function handleUpdateGuessList(guessAttempt) {
-    console.log("[handling_guess]: INPUT: ", guessAttempt);
-
     const wordStatus = checkGuess(guessAttempt, answer);
 
     const newInput = {
@@ -38,7 +36,7 @@ function Game() {
     );
 
     updatedList[updateIndexPosition] = newInput;
-    console.log("UPDATED LIST TO RENDER: ", updatedList);
+
     setGuessList(updatedList);
     setGuessAttempts((prevState) => prevState + 1);
 
@@ -54,9 +52,6 @@ function Game() {
     }
   }
 
-  console.log("CURRENT_GUESS_LIST: ", guessList);
-
-  console.log("MOST RECENT IN LIST: ", guessList);
   return (
     <>
       <UserGuessAttempts renderGrid={guessList} />
